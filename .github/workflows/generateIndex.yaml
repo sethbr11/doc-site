@@ -21,7 +21,7 @@ jobs:
           node-version: 18 # Use the latest LTS version
 
       - name: Generate index.json
-        run: node generate-index.js # Replace with the actual script filename
+        run: node generateIndex.js # Replace with the actual script filename
 
       - name: Commit and push if changes exist
         run: |
