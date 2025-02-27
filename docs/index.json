@@ -49,8 +49,20 @@
     ]
   },
   {
-    "name": "Normal Named Doc",
-    "path": "normalNamedDoc.md",
-    "type": "file"
+    "name": "Development",
+    "path": "03_development",
+    "type": "folder",
+    "children": [
+      {
+        "name": "Quick Reference Commands",
+        "path": "00_quickReferenceCommands.md",
+        "type": "file"
+      },
+      {
+        "name": "Interacting With Vue And Blade Pages",
+        "path": "01_interactingWithVueAndBladePages.md",
+        "type": "file"
+      }
+    ]
   }
 ]

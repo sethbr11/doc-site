@@ -50,4 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Load the sidebar when the document is ready
     loadSidebar();
+
+    // Load the default markdown file
+    loadMarkdown("docs/00_introduction.md");
 });
