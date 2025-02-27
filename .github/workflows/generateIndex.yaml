@@ -3,7 +3,7 @@ name: Generate Index
 on:
   push:
     branches:
-      - main # Change to your branch if needed
+      - main # Adjust if using a different branch
 
 jobs:
   update-index:
@@ -13,22 +13,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          persist-credentials: false # Prevents conflicts when pushing changes
-
-      - name: Authenticate with GitHub
-        run: echo "${{ secrets.DOC_SITE_SAMPLE }}" | gh auth login --with-token
+          persist-credentials: false # Disable default credentials
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18 # Use the latest LTS version
+          node-version: 18 # Use latest LTS version
 
       - name: Generate index.json
-        run: node generateIndex.js # Replace with the actual script filename
+        run: node generateIndex.js # Make sure the file exists
 
       - name: Commit and push if changes exist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Use GitHub's built-in token
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/index.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update index.json" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update index.json" && git push "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" main)
