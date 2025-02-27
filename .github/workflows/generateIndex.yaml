@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          persist-credentials: true # Use GITHUB_TOKEN for authentication
+          persist-credentials: false # Disable default credentials
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -24,8 +24,10 @@ jobs:
         run: node generateIndex.js # Make sure the file exists
 
       - name: Commit and push if changes exist
+        env:
+          GITHUB_TOKEN: ${{ secrets.DOC_SITE_SAMPLE }} # Use PAT stored in secrets
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/index.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update index.json" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update index.json" && git push "https://${{ secrets.PERSONAL_ACCESS_TOKEN }}@github.com/${{ github.repository }}.git" main)
