@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Introduction",
+    "path": "00_introduction.md",
+    "type": "file"
+  },
+  {
+    "name": "Getting Started",
+    "path": "01_gettingStarted.md",
+    "type": "file"
+  },
+  {
+    "name": "Advanced",
+    "path": "02_advanced",
+    "type": "folder",
+    "children": [
+      {
+        "name": "Topic1",
+        "path": "topic1.md",
+        "type": "file"
+      },
+      {
+        "name": "Topic2",
+        "path": "topic2.md",
+        "type": "file"
+      },
+      {
+        "name": "Topic3",
+        "path": "topic3.md",
+        "type": "file"
+      }
+    ]
+  },
+  {
+    "name": "Advanced Topics",
+    "path": "03_advancedTopics",
+    "type": "folder",
+    "children": [
+      {
+        "name": "Topic2",
+        "path": "01_topic2.md",
+        "type": "file"
+      },
+      {
+        "name": "Topic1",
+        "path": "02_topic1.md",
+        "type": "file"
+      }
+    ]
+  },
+  {
+    "name": "Normal Named Doc",
+    "path": "normalNamedDoc.md",
+    "type": "file"
+  }
+]
