@@ -1,6 +1,6 @@
 # Documentation Site
 
-This project is a simple documentation site that dynamically generates an index of markdown files and displays their content. The site includes a sidebar for navigation and a main content area for displaying the markdown content.
+This project is a simple documentation site that dynamically generates an index of markdown files and displays their content. The site includes a sidebar for navigation and a main content area for displaying the markdown content. An example of this can be viewed at [docsite.brockefni.com](https://docsite.brockefni.com).
 
 ## Features
 
