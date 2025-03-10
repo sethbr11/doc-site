@@ -50,20 +50,29 @@ export function loadMarkdown(file) {
 
       // Enhanced code block rendering with syntax highlighting and copy button
       renderer.code = function (code, language) {
+        const escapeHTML = (str) =>
+          str
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
+        const escapedCode = escapeHTML(code); // Prevents script injection & preserves formatting
+
         return `
           <div class="code-block-wrapper">
             <div class="code-block-header">
               <span class="code-language">${language || "text"}</span>
-              <button class="copy-code-button" onclick="navigator.clipboard.writeText(\`${code.replace(
-                /`/g,
-                "\\`"
-              )}\`)">
+              <button class="copy-code-button" data-code="${encodeURIComponent(
+                code
+              )}">
                 <i class="fas fa-copy"></i>
               </button>
             </div>
             <pre><code class="language-${
               language || "text"
-            }">${code}</code></pre>
+            }">${escapedCode}</code></pre>
           </div>
         `;
       };
