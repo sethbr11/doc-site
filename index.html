@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation Site</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--Highlight.js-->
+    <link rel="stylesheet" href="vendor/css/highlight.min.css" />
+  </head>
+  <body>
+    <div class="documentation-layout">
+      <div class="sidebar-container">
+        <div class="sidebar-header">
+          <div class="logo">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <path
+                d="M20 6C12.268 6 6 12.268 6 20C6 27.732 12.268 34 20 34C27.732 34 34 27.732 34 20C34 12.268 27.732 6 20 6Z"
+                stroke="#3B82F6"
+                stroke-width="2"
+              />
+              <path
+                d="M14 20H26M20 14V26"
+                stroke="#3B82F6"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            <span>DocSite</span>
+          </div>
+          <button id="sidebar-toggle" class="sidebar-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+
+        <div class="sidebar-search">
+          <div class="search-wrapper">
+            <i class="fas fa-search"></i>
+            <input
+              type="text"
+              id="search-docs"
+              placeholder="Search documentation..."
+            />
+          </div>
+        </div>
+
+        <nav id="sidebar" class="sidebar-nav">
+          <!-- Sidebar content will be loaded here -->
+          <div class="skeleton-loader">
+            <div class="skeleton-item"></div>
+            <div class="skeleton-item"></div>
+            <div class="skeleton-item"></div>
+            <div class="skeleton-item"></div>
+            <div class="skeleton-item"></div>
+          </div>
+        </nav>
+      </div>
+
+      <button id="sidebar-popout" class="sidebar-popout">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+
+      <div class="content-container">
+        <header class="content-header">
+          <nav class="breadcrumb" id="breadcrumb">
+            <span>Documentation</span>
+            <i class="fas fa-chevron-right"></i>
+            <span id="current-page">Introduction</span>
+          </nav>
+
+          <div class="content-actions">
+            <button
+              id="dark-mode-toggle"
+              class="icon-button"
+              title="Toggle dark mode"
+            >
+              <i class="fas fa-moon"></i>
+            </button>
+            <button
+              id="font-size-increase"
+              class="icon-button"
+              title="Increase font size"
+            >
+              <i class="fas fa-font"></i
+              ><i class="fas fa-plus" style="font-size: 0.7em"></i>
+            </button>
+            <button
+              id="font-size-decrease"
+              class="icon-button"
+              title="Decrease font size"
+            >
+              <i class="fas fa-font"></i
+              ><i class="fas fa-minus" style="font-size: 0.7em"></i>
+            </button>
+          </div>
+        </header>
+
+        <main id="content" class="content">
+          <!-- Markdown content will be loaded here -->
+          <div class="content-loader">
+            <div class="skeleton-loader">
+              <div class="skeleton-title"></div>
+              <div class="skeleton-line"></div>
+              <div class="skeleton-line"></div>
+              <div class="skeleton-line"></div>
+              <div class="skeleton-subtitle"></div>
+              <div class="skeleton-line"></div>
+              <div class="skeleton-line"></div>
+            </div>
+          </div>
+        </main>
+
+        <div class="content-footer">
+          <div class="navigation-buttons">
+            <button id="prev-page" class="nav-button" disabled>
+              <i class="fas fa-arrow-left"></i> Previous
+            </button>
+            <button id="next-page" class="nav-button">
+              Next <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="page-meta">
+            <div>
+              Last updated: <span id="last-updated">March 10, 2025</span>
+            </div>
+            <!-- Maybe for a future implementation -->
+            <!-- <div>
+              <a href="#" id="edit-page">
+                <i class="fas fa-pen"></i> Edit this page
+              </a>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="main-footer">
+      <div class="footer-content">
+        <p>&copy; 2025 Doc Site. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="https://github.com/sethbr11/doc-site">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="vendor/js/marked.min.js"></script>
+    <script src="vendor/js/highlight.min.js"></script>
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>

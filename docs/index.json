@@ -1,0 +1,63 @@
+[
+  {
+    "name": "Introduction",
+    "path": "00_introduction.md",
+    "type": "file"
+  },
+  {
+    "name": "Project Overview",
+    "path": "01_projectOverview.md",
+    "type": "file"
+  },
+  {
+    "name": "The First Folder",
+    "path": "02_theFirstFolder",
+    "type": "folder",
+    "children": [
+      {
+        "name": "Topic One",
+        "path": "topicOne.md",
+        "type": "file"
+      },
+      {
+        "name": "Topic_2",
+        "path": "topic_2.md",
+        "type": "file"
+      },
+      {
+        "name": "Topic3",
+        "path": "topic3.md",
+        "type": "file"
+      }
+    ]
+  },
+  {
+    "name": "Topic4",
+    "path": "03_topic4.md",
+    "type": "file"
+  },
+  {
+    "name": "Another Folder",
+    "path": "04_anotherFolder",
+    "type": "folder",
+    "children": [
+      {
+        "name": "Topic_5",
+        "path": "00_topic_5.md",
+        "type": "file"
+      },
+      {
+        "name": "Subfolder",
+        "path": "01_subfolder",
+        "type": "folder",
+        "children": [
+          {
+            "name": "Topic_6",
+            "path": "topic_6.md",
+            "type": "file"
+          }
+        ]
+      }
+    ]
+  }
+]
